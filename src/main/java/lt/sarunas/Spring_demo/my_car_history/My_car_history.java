@@ -4,9 +4,14 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
 @Table(name = "my_car_history")
+@Getter @Setter @NoArgsConstructor @ToString
 public class My_car_history {
 
     @Id
@@ -25,48 +30,4 @@ public class My_car_history {
     @Column(name = "date")
     private String date;
 
-    public Integer getId() {return id;}
-
-    public void setId(Integer id) {this.id = id;}
-
-    public String getPart_Name() {return part_Name;}
-
-    public void setPart_Name(String part_Name) {this.part_Name = part_Name;}
-
-    public String getQuantity() {return quantity;}
-
-    public void setQuantity(String quantity) {this.quantity = quantity;}
-
-    public String getPart_Price() {return part_Price;}
-
-    public void setPart_Price(String part_Price) {this.part_Price = part_Price;}
-
-    public String getRepair_Cost() {return repair_Cost;}
-
-    public void setRepair_Cost(String repair_Cost) {this.repair_Cost = repair_Cost;}
-
-    public String getService_Name() {return service_Name;}
-
-    public void setService_Name(String service_Name) {this.service_Name = service_Name;}
-
-    public String getDate() {return date;}
-
-    public void setDate(String date) {this.date = date;}
-
-    public My_car_history() {
-        super();
-    }
-
-    @Override
-    public String toString() {
-        return "My_car_history{" +
-                "id=" + id +
-                ", part_Name='" + part_Name + '\'' +
-                ", quantity='" + quantity + '\'' +
-                ", part_Price='" + part_Price + '\'' +
-                ", repair_Cost='" + repair_Cost + '\'' +
-                ", service_Name='" + service_Name + '\'' +
-                ", date='" + date + '\'' +
-                '}';
-    }
 }
