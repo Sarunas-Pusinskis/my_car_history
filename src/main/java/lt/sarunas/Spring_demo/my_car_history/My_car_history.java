@@ -16,7 +16,7 @@ public class My_car_history {
 
     @Id
     @Column(name = "id")
-    private Integer id;
+    private Integer Id;
     @Column(name = "part_name")
     private String part_Name;
     @Column(name = "quantity")
@@ -30,4 +30,7 @@ public class My_car_history {
     @Column(name = "date")
     private String date;
 
+    public My_car_history(String part_Name) {
+        this.part_Name = part_Name;
+    }
 }
