@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title><MyCarHistory List></title>
+</head>
+<body>
+
+<table id="my_car_history" class="table">
+<tr>
+    <th class="th">#</th>
+    <th class="th">id</th>
+    <th class="th">part_name</th>
+    <th class="th">quantity</th>
+    <th class="th">part_price</th>
+    <th class="th">repair_cost</th>
+    <th class="th">service_name</th>
+    <th class="th">date</th>
+</tr>
+    <tr th:each="my_car_history : ${key_my_car_history_list}">
+        <td class="td" th:text="${my_car_historyStat.index+1}"></td>
+        <td class="td" th:text="${my_car_history.Part_Name}"></td>
+        <td class="td" th:text="${my_car_history.Quantity}"></td>
+        <td class="td" th:text="${my_car_history.Part_Price}"></td>
+        <td class="td" th:text="${my_car_history.Repair_Cost}"></td>
+        <td class="td" th:text="${my_car_history.Service_Name}"></td>
+        <td class="td" th:text="${my_car_history.Date}"></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
