@@ -4,6 +4,7 @@ import lt.sarunas.Spring_demo.my_car_history.My_car_history;
 import lt.sarunas.Spring_demo.service.MyCarHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,9 +32,9 @@ public class MyCarHistoryController {
         return myCarHistoryService.getAllMyCarHistory();
     }
 
-    // http://localhost:8080/MyCarHistory/1 - > konkrečios eilutės pagal ID atvaizdavimas
+    // http://localhost:8080/mycarhistory/1 - > konkrečios eilutės pagal ID atvaizdavimas
     @GetMapping(path = "/{id}")
     public @ResponseBody My_car_history getMy_car_historyById (@PathVariable int id){
-            return myCarHistoryService.getMy_car_historyById(id);
+        return myCarHistoryService.getMy_car_historyById(id);
     }
 }
