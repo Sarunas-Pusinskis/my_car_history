@@ -45,7 +45,26 @@ public class MyCarHistoryTemplateController {
     @GetMapping(path = "/firstpage/all")
     public String getAllMyCarHistoryFirstPageList (Model model){
         List<My_car_history> my_car_histories =  myCarHistoryService.getAllMyCarHistory();
-        model.addAttribute("key_my_car_history_list", my_car_histories);
+        model.addAttribute("key_my_car_histories_list", my_car_histories);
         return "/test/firstpage_mycarhistory_list";
     }
+
+    // HTML CSS styles implementation
+    // http://localhost:8080/mycarhistorytemplate/mycarhistory/1
+    @GetMapping(path = "/mycarhistory/{id}") //----NEVEIKIA NUORODA SU LENTELE. TAISYTI
+    public  String getMyCarHistory(@PathVariable int id, Model model){
+            My_car_history my_car_history = myCarHistoryService.getMy_car_historyById(id);
+            model.addAttribute("key_my_car_history", my_car_history);
+            return "/mycarhistory/mycarhistory_th";
+    }
+
+    // http://localhost:8080/mycarhistorytemplate/mycarhistory/all
+    @GetMapping(path = "/mycarhistory/all")
+    public String getAllMyCarHistory (Model model){
+            List<My_car_history> my_car_histories = myCarHistoryService.getAllMyCarHistory();
+            model.addAttribute("key_mycarhistories_list", my_car_histories);
+            return "/mycarhistory/mycarhistories_th";
+    }
+
+
 }
