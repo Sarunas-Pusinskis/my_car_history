@@ -8,11 +8,13 @@ body {
 }
 
 .th {
-  background-color: aquamarine;
-  border: 2px solid blue;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
 }
 
 .td {
-  background-color: lightsalmon;
-  border: 2px solid blue;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #DDD;
 }

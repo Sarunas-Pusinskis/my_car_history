@@ -14,8 +14,5 @@ public class BootStrapData  implements CommandLineRunner {
     public void run(String... args) throws Exception {
         System.out.println();
         myCarHistoryRepository.findAll().forEach(System.out::println); // visi įrašai
-        System.out.println("\n================\n");
-        System.out.println(myCarHistoryRepository.findById(1).get() + "\n"); // randa konkretų įrašą
-        System.out.println(myCarHistoryRepository.count()); // rodo kiek yra įrašų
     }
 }
