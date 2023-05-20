@@ -1,0 +1,7 @@
+.table {
+  display: grid;
+
+  grid-template-columns: repeat(9, auto);
+
+  gap: 3px;
+}

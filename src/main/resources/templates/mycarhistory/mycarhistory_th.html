@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link th:href="@{/styles/mycarhistory/basic.css}" rel="stylesheet"/>
+  <link th:href="@{/styles/mycarhistory/index.css}" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/styles/mycarhistory/basic.css"/>
+  <link rel="stylesheet" href="/static/styles/mycarhistory/index.css"/>
+</head>
+<body>
+<div class="my_car_history" th:object="${key_my_car_history}">
+  <div class="label"><p>Id: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="*{my_car_historyId}"> Some text here</p>
+  </div>
+  <div class="label"><p>Part_Name: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.Part_Name}"> Some text here</p>
+  </div>
+  <div class="label"><p>Quantity: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.contactQuantity}"> Some text here</p>
+  </div>
+  <div class="label"><p>Part_Price: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.contactPart_Price}"> Some text here</p>
+  </div>
+  <div class="label"><p>Repair_Cost: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.Repair_Cost}"> Some text here</p>
+  </div>
+  <div class="label"><p>Service_Name: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.Service_Name}"> Some text here</p>
+  </div>
+  <div class="label"><p>Date: </p></div>
+  <div class="my_car_history-data">
+    <p th:text="${key_my_car_history.Date}"> Some text here</p>
+  </div>
+</div>
+</body>
+</html>

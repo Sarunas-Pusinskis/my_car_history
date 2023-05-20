@@ -7,19 +7,20 @@
 </head>
 <body>
 
-<table id="my_car_history" class="table">
+<table id="my_car_historyDataTable" class="table">
 <tr>
     <th class="th">#</th>
-    <th class="th">id</th>
-    <th class="th">part_name</th>
-    <th class="th">quantity</th>
-    <th class="th">part_price</th>
-    <th class="th">repair_cost</th>
-    <th class="th">service_name</th>
-    <th class="th">date</th>
+    <th class="th">Id</th>
+    <th class="th">Part_Name</th>
+    <th class="th">Quantity</th>
+    <th class="th">Part_Price</th>
+    <th class="th">Repair_Cost</th>
+    <th class="th">Service_Name</th>
+    <th class="th">Date</th>
 </tr>
-    <tr th:each="my_car_history : ${key_my_car_history_list}">
+    <tr th:each="my_car_history : ${key_my_car_histories_list}">
         <td class="td" th:text="${my_car_historyStat.index+1}"></td>
+        <td class="td" th:text="${my_car_history.Id}"></td>
         <td class="td" th:text="${my_car_history.Part_Name}"></td>
         <td class="td" th:text="${my_car_history.Quantity}"></td>
         <td class="td" th:text="${my_car_history.Part_Price}"></td>

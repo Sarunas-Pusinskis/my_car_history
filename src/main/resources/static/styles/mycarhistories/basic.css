@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+  color: black;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.th {
+  background-color: aquamarine;
+  border: 2px solid blue;
+}
+
+.td {
+  background-color: lightsalmon;
+  border: 2px solid blue;
+}

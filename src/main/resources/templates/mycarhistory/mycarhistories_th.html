@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link th:href="@{/styles/mycarhistories/basic.css}" rel="stylesheet"/>
+  <link th:href="@{/styles/mycarhistories/index.css}" rel="stylesheet"/>
+  <link rel="stylesheet" href="/static/styles/mycarhistories/basic.css">
+  <link rel="stylesheet" href="/static/styles/mycarhistories/index.css">
+</head>
+
+<body>
+<table id="my_car_historyDataTable" class="table">
+  <tr>
+    <th class="th">#</th>
+    <th class="th">id</th>
+    <th class="th">Part_Name</th>
+    <th class="th">Quantity</th>
+    <th class="th">Part_Price</th>
+    <th class="th">Repair_Cost</th>
+    <th class="th">Service_Name</th>
+    <th class="th">Date</th>
+
+  </tr>
+  <tr th:each="my_car_history : ${key_mycarhistories_list}">
+    <td class="td" th:text="${my_car_historyStat.index+1}"></td>
+    <td class="td" th:text="${my_car_history.Id}"></td>
+    <td class="td" th:text="${my_car_history.Part_Name}"></td>
+    <td class="td" th:text="${my_car_history.Quantity}"></td>
+    <td class="td" th:text="${my_car_history.Part_Price}"></td>
+    <td class="td" th:text="${my_car_history.Repair_Cost}"></td>
+    <td class="td" th:text="${my_car_history.Service_Name}"></td>
+    <td class="td" th:text="${my_car_history.Date}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
