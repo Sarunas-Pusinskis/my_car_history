@@ -6,11 +6,27 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/mycarhistory/mycarhistory/getandpost}" th:object="${myCarHistory}" method="post">
-  <label>Auto part name:</label>
-  <input type="text" th:field="${myCarHistory.Part_Name}" id="part_name"/>
+<form action="/mycarhistory/mycarhistory/add-new-expenses" method="post" th:object="${myCarHistory}">
+  <label for="partName">Auto part name:</label>
+  <input type="text" id="partName" th:field="*{part_Name}" />
+
+  <label for="quantity">Quantity:</label>
+  <input type="text" id="quantity" th:field="*{quantity}" />
+
+  <label for="partPrice">Part Price:</label>
+  <input type="text" id="partPrice" th:field="*{part_Price}" />
+
+  <label for="repairCost">Repair Cost:</label>
+  <input type="text" id="repairCost" th:field="*{repair_Cost}" />
+
+  <label for="serviceName">Service Name:</label>
+  <input type="text" id="serviceName" th:field="*{service_Name}" />
+
+  <label for="date">Date:</label>
+  <input type="text" id="date" th:field="*{date}" />
+
   <input type="submit" value="Submit" />
-  <input type="submit" value="Clear" onclick="document.getElementById('part_name').value = ''"/>
+  <input type="reset" value="Clear" />
 </form>
 <br>
 
