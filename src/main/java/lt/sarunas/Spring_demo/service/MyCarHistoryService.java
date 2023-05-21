@@ -32,9 +32,6 @@ public class MyCarHistoryService {
         return new CarHistory("Info do not exist by this id: " + id);
     }
 
-//    public CarHistory getMyCarHistoryByIdCustomised(int id) {
-//        return myCarHistoryRepository.findByMyCarHistoryNumber(id).get();
-//    }
     public List<CarHistory> getMyCarHistoryByNameLike(String name) {
         return myCarHistoryRepository.getMyCarHistoryQueryNameLike("%" + name + "%");
     }
