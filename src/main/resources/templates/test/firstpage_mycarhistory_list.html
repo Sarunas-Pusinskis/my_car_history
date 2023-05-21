@@ -18,15 +18,15 @@
     <th class="th">Service_Name</th>
     <th class="th">Date</th>
 </tr>
-    <tr th:each="my_car_history : ${key_my_car_histories_list}">
-        <td class="td" th:text="${my_car_historyStat.index+1}"></td>
-        <td class="td" th:text="${my_car_history.Id}"></td>
-        <td class="td" th:text="${my_car_history.Part_Name}"></td>
-        <td class="td" th:text="${my_car_history.Quantity}"></td>
-        <td class="td" th:text="${my_car_history.Part_Price}"></td>
-        <td class="td" th:text="${my_car_history.Repair_Cost}"></td>
-        <td class="td" th:text="${my_car_history.Service_Name}"></td>
-        <td class="td" th:text="${my_car_history.Date}"></td>
+    <tr th:each="history : ${myCarHistories}">
+        <td class="td" th:text="${historyStat.index+1}"></td>
+        <td class="td" th:text="${history.Id}"></td>
+        <td class="td" th:text="${history.Part_Name}"></td>
+        <td class="td" th:text="${history.Quantity}"></td>
+        <td class="td" th:text="${history.Part_Price}"></td>
+        <td class="td" th:text="${history.Repair_Cost}"></td>
+        <td class="td" th:text="${history.Service_Name}"></td>
+        <td class="td" th:text="${history.Date}"></td>
     </tr>
 </table>
 

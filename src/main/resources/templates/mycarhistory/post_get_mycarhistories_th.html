@@ -6,9 +6,9 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/mycarhistorytemplate/mycarhistory/getandpost}" th:object="${key_my_car_history}" method="post">
+<form action="#" th:action="@{/mycarhistory/mycarhistory/getandpost}" th:object="${myCarHistory}" method="post">
   <label>Auto part name:</label>
-  <input type="text" th:field="${my_car_history.my_car_historyPart_Name}" id="part_name"/>
+  <input type="text" th:field="${myCarHistory.Part_Name}" id="part_name"/>
   <input type="submit" value="Submit" />
   <input type="submit" value="Clear" onclick="document.getElementById('part_name').value = ''"/>
 </form>
@@ -27,19 +27,19 @@
 
   </tr>
 
-  <tr th:if="${#lists.isEmpty(key_my_car_history_listas)}">
+  <tr th:if="${#lists.isEmpty(myCarHistories)}">
     <td colspan="5">No Records found. Add some...!</td>
   </tr>
 
-  <tr th:each="my_car_history : ${key_my_car_history_listas}">
-    <td class="td" th:text="${my_car_historyStat.index+1}"></td>
-    <td class="td" th:text="${my_car_history.Id}"></td>
-    <td class="td" th:text="${my_car_history.Part_Name}"></td>
-    <td class="td" th:text="${my_car_history.Quantity}"></td>
-    <td class="td" th:text="${my_car_history.Part_Price}"></td>
-    <td class="td" th:text="${my_car_history.Repair_Cost}"></td>
-    <td class="td" th:text="${my_car_history.Service_Name}"></td>
-    <td class="td" th:text="${my_car_history.Date}"></td>
+  <tr th:each="history : ${myCarHistories}">
+    <td class="td" th:text="${historyStat.index+1}"></td>
+    <td class="td" th:text="${history.Id}"></td>
+    <td class="td" th:text="${history.Part_Name}"></td>
+    <td class="td" th:text="${history.Quantity}"></td>
+    <td class="td" th:text="${history.Part_Price}"></td>
+    <td class="td" th:text="${history.Repair_Cost}"></td>
+    <td class="td" th:text="${history.Service_Name}"></td>
+    <td class="td" th:text="${history.Date}"></td>
   </tr>
 </table>
 

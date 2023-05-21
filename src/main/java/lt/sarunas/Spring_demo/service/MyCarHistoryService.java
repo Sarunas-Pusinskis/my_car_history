@@ -1,25 +1,24 @@
 package lt.sarunas.Spring_demo.service;
 
-import lt.sarunas.Spring_demo.my_car_history.My_car_history;
-import lt.sarunas.Spring_demo.my_car_history.My_car_history_Repository;
+import lt.sarunas.Spring_demo.my_car_history.CarHistory;
+import lt.sarunas.Spring_demo.my_car_history.CarHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class MyCarHistoryService {
 
     @Autowired
-    private My_car_history_Repository myCarHistoryRepository;
+    private CarHistoryRepository myCarHistoryRepository;
 
-    public List<My_car_history> getAllMyCarHistory() {
+    public List<CarHistory> getAllMyCarHistory() {
 
-        return (List<My_car_history>) myCarHistoryRepository.findAll();
+        return (List<CarHistory>) myCarHistoryRepository.findAll();
     }
 
-    public My_car_history getMy_car_historyById(int id) {
+    public CarHistory getMy_car_historyById(int id) {
 
         /*try {
             return myCarHistoryRepository.findById(id).get();
@@ -30,6 +29,13 @@ public class MyCarHistoryService {
         if (myCarHistoryRepository.findById(id).isPresent()){
             return myCarHistoryRepository.findById(id).get();
         }
-        return new My_car_history("Info do not exist by this id: " + id);
+        return new CarHistory("Info do not exist by this id: " + id);
+    }
+
+//    public CarHistory getMyCarHistoryByIdCustomised(int id) {
+//        return myCarHistoryRepository.findByMyCarHistoryNumber(id).get();
+//    }
+    public List<CarHistory> getMyCarHistoryByNameLike(String name) {
+        return myCarHistoryRepository.getMyCarHistoryQueryNameLike("%" + name + "%");
     }
 }

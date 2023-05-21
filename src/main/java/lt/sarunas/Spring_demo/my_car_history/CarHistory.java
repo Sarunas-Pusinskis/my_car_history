@@ -12,7 +12,7 @@ import lombok.ToString;
 @Entity
 @Table(name = "my_car_history")
 @Getter @Setter @NoArgsConstructor @ToString
-public class My_car_history {
+public class CarHistory {
 
     @Id
     @Column(name = "id")
@@ -30,7 +30,7 @@ public class My_car_history {
     @Column(name = "date")
     private String date;
 
-    public My_car_history(String part_Name) {
+    public CarHistory(String part_Name) {
         this.part_Name = part_Name;
     }
 }

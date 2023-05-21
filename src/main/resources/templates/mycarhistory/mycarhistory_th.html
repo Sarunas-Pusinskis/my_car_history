@@ -10,34 +10,34 @@
   <link rel="stylesheet" href="/static/styles/mycarhistory/index.css"/>
 </head>
 <body>
-<div class="my_car_history" th:object="${key_my_car_history}">
+<div class="carHistory" th:object="${myCarHistory}">
   <div class="label"><p>Id: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="*{my_car_historyId}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="*{Id}"> Some text here</p>
   </div>
   <div class="label"><p>Part_Name: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.Part_Name}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Part_Name}"> Some text here</p>
   </div>
   <div class="label"><p>Quantity: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.contactQuantity}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Quantity}"> Some text here</p>
   </div>
   <div class="label"><p>Part_Price: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.contactPart_Price}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Part_Price}"> Some text here</p>
   </div>
   <div class="label"><p>Repair_Cost: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.Repair_Cost}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Repair_Cost}"> Some text here</p>
   </div>
   <div class="label"><p>Service_Name: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.Service_Name}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Service_Name}"> Some text here</p>
   </div>
   <div class="label"><p>Date: </p></div>
-  <div class="my_car_history-data">
-    <p th:text="${key_my_car_history.Date}"> Some text here</p>
+  <div class="carHistory-data">
+    <p th:text="${myCarHistory.Date}"> Some text here</p>
   </div>
 </div>
 </body>
