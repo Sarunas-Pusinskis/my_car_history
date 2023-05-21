@@ -16,7 +16,7 @@ public class CarHistory {
     @Column(name = "part_name")
     private String part_Name;
     @Column(name = "quantity")
-    private Double quantity ;
+    private Double quantity;
     @Column(name = "part_price")
     private Double part_Price;
     @Column(name = "repair_cost")

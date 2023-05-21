@@ -27,7 +27,7 @@ public class MyCarHistoryService {
             e.printStackTrace();
         } */ // 2 variantas su catch metodu
 
-        if (myCarHistoryRepository.findById(id).isPresent()){
+        if (myCarHistoryRepository.findById(id).isPresent()) {
             return myCarHistoryRepository.findById(id).get();
         }
         return new CarHistory("Info do not exist by this id: " + id);

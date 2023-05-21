@@ -2,43 +2,44 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link th:href="@{/styles/mycarhistory/basic.css}" rel="stylesheet"/>
-  <link th:href="@{/styles/mycarhistory/index.css}" rel="stylesheet"/>
-  <link rel="stylesheet" href="/static/styles/mycarhistory/basic.css"/>
-  <link rel="stylesheet" href="/static/styles/mycarhistory/index.css"/>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/mycarhistory/basic.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/mycarhistory/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/mycarhistory/basic.css"/>
+    <link rel="stylesheet" href="/static/styles/mycarhistory/index.css"/>
 </head>
+
 <body>
 <div class="carHistory" th:object="${myCarHistory}">
-  <div class="label"><p>Id: </p></div>
-  <div class="carHistory-data">
-    <p th:text="*{Id}"> Some text here</p>
-  </div>
-  <div class="label"><p>Part_Name: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Part_Name}"> Some text here</p>
-  </div>
-  <div class="label"><p>Quantity: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Quantity}"> Some text here</p>
-  </div>
-  <div class="label"><p>Part_Price: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Part_Price}"> Some text here</p>
-  </div>
-  <div class="label"><p>Repair_Cost: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Repair_Cost}"> Some text here</p>
-  </div>
-  <div class="label"><p>Service_Name: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Service_Name}"> Some text here</p>
-  </div>
-  <div class="label"><p>Date: </p></div>
-  <div class="carHistory-data">
-    <p th:text="${myCarHistory.Date}"> Some text here</p>
-  </div>
+    <div class="label"><p>Id: </p></div>
+    <div class="carHistory-data">
+        <p th:text="*{Id}"> Some text here</p>
+    </div>
+    <div class="label"><p>Part_Name: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Part_Name}"> Some text here</p>
+    </div>
+    <div class="label"><p>Quantity: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Quantity}"> Some text here</p>
+    </div>
+    <div class="label"><p>Part_Price: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Part_Price}"> Some text here</p>
+    </div>
+    <div class="label"><p>Repair_Cost: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Repair_Cost}"> Some text here</p>
+    </div>
+    <div class="label"><p>Service_Name: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Service_Name}"> Some text here</p>
+    </div>
+    <div class="label"><p>Date: </p></div>
+    <div class="carHistory-data">
+        <p th:text="${myCarHistory.Date}"> Some text here</p>
+    </div>
 </div>
 </body>
 </html>
