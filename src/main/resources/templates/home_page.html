@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en"
-      xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-    <link th:href="@{/styles/homepage/basic.css}" rel="stylesheet"/>
-    <link th:href="@{/styles/homepage/index.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="/static/styles/homepage/basic.css"/>
-    <link rel="stylesheet" href="/static/styles/homepage/index.css"/>
+    <link th:href="@{/styles/homepage/button.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/homepage/button.css"/>
 </head>
 
 <body>
 <style>
     body {
-      background-image: url("https://img.freepik.com/free-photo/repair-man-making-car-service_1303-26870.jpg?w=996&t=st=1684445178~exp=1684445778~hmac=8d4552c69bc4e2e92b70543568cc730cdd6680c6e525a0c01c6d644c4de460ff");
-      background-repeat: no-repeat;
-      background-size: cover;
+        background-image: url("https://img.freepik.com/free-photo/repair-man-making-car-service_1303-26870.jpg?w=996&t=st=1684445178~exp=1684445778~hmac=8d4552c69bc4e2e92b70543568cc730cdd6680c6e525a0c01c6d644c4de460ff");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 </style>
 
@@ -23,11 +20,21 @@
     <h1 class="custom-heading">CAR REPAIR HISTORY</h1>
     <div>
         <div>
-            <p><a href="http://localhost:8080/mycarhistory/mycarhistory/all"/>ADD NEW EXPENSES</p>
-            <p><a href="http://localhost:8080/mycarhistory/mycarhistory/all1"/>ALL LIST</p>
-            <p><a href="http://localhost:8080/mycarhistory/mycarhistory/1"/>ONE SAVED DATA REPORT BY ID</p>
-            <p><a href="http://localhost:8080/mycarhistory/mycarhistory/getandpost"/>SEARCH FOR CAR PART</p>
-            <p><a href="http://localhost:8080/mycarhistory/mycarhistory/expenses"/>ALL EXPENSES</p>
+            <p>
+                <a href="http://localhost:8080/mycarhistory/mycarhistory/all" class="button">ADD NEW EXPENSES</a>
+            </p>
+            <p>
+                <a href="http://localhost:8080/mycarhistory/mycarhistory/all1" class="button">ALL LIST</a>
+            </p>
+            <p>
+                <a href="http://localhost:8080/mycarhistory/mycarhistory/1" class="button">ONE SAVED DATA REPORT BY ID</a>
+            </p>
+            <p>
+                <a href="http://localhost:8080/mycarhistory/mycarhistory/getandpost" class="button">SEARCH FOR CAR PART</a>
+            </p>
+            <p>
+                <a href="http://localhost:8080/mycarhistory/mycarhistory/expenses" class="button">ALL EXPENSES</a>
+            </p>
         </div>
     </div>
 </div>

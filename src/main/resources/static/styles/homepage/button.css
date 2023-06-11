@@ -1,0 +1,59 @@
+/* Button Styles */
+.button {
+  --color: #F6F8FF;
+  --background: #58607F;
+  --background-hover: #4B0082;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  line-height: 40px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 30px;
+  width: 500px;
+  background: var(--background);
+  color: var(--color);
+  -webkit-tap-highlight-color: transparent;
+  transition: background .25s ease;
+}
+
+.button:hover {
+  background: var(--background-hover);
+}
+
+.button.border {
+  --color: #404660;
+  --background: #fff;
+  --background-hover: #FAFBFF;
+  border: 1px solid #D1D6EE;
+}
+
+/* Center & dribbble */
+body {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', Arial;
+  background: #ECEFFC;
+}
+
+.container {
+  text-align: center;
+}
+
+.custom-heading {
+  color: #fff;
+  font-size: 60px;
+  margin-bottom: 40px;
+}
+
+/* Additional Styles */
+.container p {
+  margin: 15px 0;
+}
