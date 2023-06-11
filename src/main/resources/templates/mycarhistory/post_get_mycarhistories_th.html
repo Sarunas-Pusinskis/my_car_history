@@ -4,23 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link th:href="@{/styles/mycarhistories/basic.css}" rel="stylesheet"/>
-    <link th:href="@{/styles/mycarhistories/index.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="/static/styles/mycarhistories/basic.css">
-    <link rel="stylesheet" href="/static/styles/mycarhistories/index.css">
+
+    <link th:href="@{/styles/mycarhistories/table.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/mycarhistories/label.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/mycarhistories/table.css">
+    <link rel="stylesheet" href="/static/styles/mycarhistories/label.css">
 </head>
 <body>
-
+<div class="form-container">
 <form action="#" th:action="@{/mycarhistory/mycarhistory/getandpost}" th:object="${myCarHistory}" method="post">
     <label>Auto part name:</label>
     <input type="text" th:field="${myCarHistory.Part_Name}" id="part_name"/>
+    <p></p>
     <input type="submit" value="Submit"/>
     <input type="submit" value="Clear" onclick="document.getElementById('part_name').value = ''"/>
 </form>
+</div>
 <br>
 
-<table>
-    <tr>
+<div class="table-wrapper">
+    <table id="my_car_historyDataTable" class="fl-table">
+        <thead>
+        <tr>
         <th class="th">#</th>
         <th class="th">id</th>
         <th class="th">Part_Name</th>
@@ -29,7 +34,9 @@
         <th class="th">Repair_Cost</th>
         <th class="th">Service_Name</th>
         <th class="th">Date</th>
-    </tr>
+        </tr>
+        </thead>
+        <tbody>
 
     <tr th:if="${#lists.isEmpty(myCarHistories)}">
         <td colspan="5">No Records found.</td>
@@ -45,7 +52,8 @@
         <td class="td" th:text="${history.Service_Name}"></td>
         <td class="td" th:text="${history.Date}"></td>
     </tr>
-</table>
-
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
