@@ -75,7 +75,7 @@ public class MyCarHistoryController {
     }
 
     // http://localhost:8080/mycarhistory/delete-expenses
-    @DeleteMapping(value = "/delete-expenses")
+    @PostMapping(value = "/delete-expenses")
     public String deleteExpenses(Model model, @ModelAttribute(value = "myCarHistory") CarHistory carHistory) {
         myCarHistoryService.deleteHistoryEntry(carHistory.getId());
         List<CarHistory> allMyCarHistory = myCarHistoryService.getAllMyCarHistory();

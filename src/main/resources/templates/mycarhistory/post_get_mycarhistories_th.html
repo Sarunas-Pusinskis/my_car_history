@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>SEARCH FOR A CAR PART</title>
 
     <link th:href="@{/styles/mycarhistories/table.css}" rel="stylesheet"/>
     <link th:href="@{/styles/mycarhistories/label.css}" rel="stylesheet"/>
@@ -13,7 +13,7 @@
 <body>
 <h2>SEARCH FOR A CAR PART</h2>
 <div class="form-container">
-    <form action="#" th:action="@{/getandpost}" th:object="${myCarHistory}" method="post">
+    <form action="#" th:action="@{/mycarhistory/getandpost}" th:object="${myCarHistory}" method="post">
         <label>Auto part name:</label>
         <input type="text" th:field="${myCarHistory.Part_Name}" id="part_name"/>
         <p></p>
