@@ -13,7 +13,7 @@
 <body>
 <h2>SEARCH FOR A CAR PART</h2>
 <div class="form-container">
-    <form action="#" th:action="@{/mycarhistory/mycarhistory/getandpost}" th:object="${myCarHistory}" method="post">
+    <form action="#" th:action="@{/getandpost}" th:object="${myCarHistory}" method="post">
         <label>Auto part name:</label>
         <input type="text" th:field="${myCarHistory.Part_Name}" id="part_name"/>
         <p></p>

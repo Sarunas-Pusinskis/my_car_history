@@ -13,7 +13,7 @@
 <body>
 <h2>ADD NEW EXPENSES</h2>
 <div class="form-container">
-    <form action="/mycarhistory/mycarhistory/add-new-expenses" method="post" th:object="${myCarHistory}">
+    <form action="/add-new-expenses" method="post" th:object="${myCarHistory}">
         <label for="partName">Auto part name:</label>
         <input type="text" id="partName" th:field="*{part_Name}"/>
 
