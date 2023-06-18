@@ -60,4 +60,8 @@ public class MyCarHistoryService {
         expenses.setTotalRepairPrice(totalRepairPrice);
         return expenses;
     }
+
+    public void updateHistoryEntry(CarHistory carHistory) {
+        myCarHistoryRepository.save(carHistory);
+    }
 }

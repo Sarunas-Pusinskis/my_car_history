@@ -92,4 +92,47 @@ public class MyCarHistoryController {
         model.addAttribute("myCarHistory", new CarHistory());
         return "/mycarhistory/add_mycarhistories_th";
     }
+
+    // http://localhost:8080/mycarhistory/search
+    @GetMapping(value = "/search")
+    public String showSearchForm(Model model) {
+        model.addAttribute("myCarHistory", new CarHistory());
+        return "/mycarhistory/update_mycarhistory_th";
+    }
+
+    @PostMapping(value = "/search")
+    public String searchByNumber(Model model, @RequestParam("id") int searchNumber) {
+        CarHistory carHistory = myCarHistoryService.getMy_car_historyById(searchNumber);
+        if (carHistory != null) {
+            model.addAttribute("myCarHistory", carHistory);
+        } else {
+            model.addAttribute("myCarHistory", new CarHistory());
+        }
+        return "/mycarhistory/update_mycarhistory_th";
+    }
+
+    // http://localhost:8080/mycarhistory/update/{id}
+    @GetMapping(path = "/update/{id}")
+    public String showUpdateForm(@PathVariable int id, Model model) {
+        CarHistory carHistory = myCarHistoryService.getMy_car_historyById(id);
+        model.addAttribute("myCarHistory", carHistory);
+        return "/mycarhistory/update_mycarhistory_th";
+    }
+
+    @PostMapping(value = "/update/{id}")
+    public String updateExpenses(@PathVariable int id, @ModelAttribute("myCarHistory") CarHistory updatedCarHistory, Model model) {
+        CarHistory existingCarHistory = myCarHistoryService.getMy_car_historyById(id);
+        if (existingCarHistory != null) {
+            // Update the fields of the existing record
+            existingCarHistory.setPart_Name(updatedCarHistory.getPart_Name());
+            existingCarHistory.setQuantity(updatedCarHistory.getQuantity());
+            existingCarHistory.setPart_Price(updatedCarHistory.getPart_Price());
+            existingCarHistory.setRepair_Cost(updatedCarHistory.getRepair_Cost());
+            existingCarHistory.setService_Name(updatedCarHistory.getService_Name());
+            existingCarHistory.setDate(updatedCarHistory.getDate());
+            myCarHistoryService.updateHistoryEntry(existingCarHistory);
+        }
+        model.addAttribute("message", "Data records updated successfully!");
+        return "/mycarhistory/update_mycarhistory_th";
+    }
 }

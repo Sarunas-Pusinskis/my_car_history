@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>UPDATE SAVED DATA</title>
+
+    <link th:href="@{/styles/mycarhistories/table.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/mycarhistories/label.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/updatemycarhistory/container.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/updatemycarhistory/container.css">
+    <link rel="stylesheet" href="/static/styles/mycarhistories/table.css">
+    <link rel="stylesheet" href="/static/styles/mycarhistories/label.css">
+</head>
+<body>
+<h2>UPDATE SAVED DATA</h2>
+<div class="form-container">
+    <form action="/mycarhistory/search" method="post">
+        <label for="searchNumber">Search by ID:</label>
+        <input type="text" id="searchNumber" name="id" th:value="${myCarHistory.id}"/>
+        <p></p>
+        <input type="submit" value="Search"/>
+    </form>
+</div>
+
+<div class="form-container">
+    <form th:action="@{/mycarhistory/update/{id}(id=${myCarHistory.id})}" method="post" th:object="${myCarHistory}">
+        <input type="hidden" id="id" th:field="*{id}" readonly="readonly" th:value="${myCarHistory.id}"/>
+
+        <label for="partName">Auto part name:</label>
+        <input type="text" id="partName" th:field="*{part_Name}"/>
+
+        <label for="quantity">Quantity:</label>
+        <input type="text" id="quantity" th:field="*{quantity}"/>
+
+        <label for="partPrice">Part Price:</label>
+        <input type="text" id="partPrice" th:field="*{part_Price}"/>
+
+        <label for="repairCost">Repair Cost:</label>
+        <input type="text" id="repairCost" th:field="*{repair_Cost}"/>
+
+        <label for="serviceName">Service Name:</label>
+        <input type="text" id="serviceName" th:field="*{service_Name}"/>
+
+        <label for="date">Date:</label>
+        <input type="text" id="date" th:field="*{date}"/>
+        <p></p>
+        <input type="submit" value="Update"/>
+    </form>
+</div>
+
+<div class="message-container">
+    <p th:text="${message}" class="message"></p>
+</div>
+</tbody>
+</table>
+</div>
+
+</body>
+
+</html>
