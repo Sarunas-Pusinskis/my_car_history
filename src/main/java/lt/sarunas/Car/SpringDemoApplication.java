@@ -1,4 +1,4 @@
-package lt.sarunas.Spring_demo;
+package lt.sarunas.Car;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

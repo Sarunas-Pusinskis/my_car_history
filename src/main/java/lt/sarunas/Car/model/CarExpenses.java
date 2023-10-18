@@ -1,4 +1,4 @@
-package lt.sarunas.Spring_demo.model;
+package lt.sarunas.Car.model;
 
 import lombok.Data;
 

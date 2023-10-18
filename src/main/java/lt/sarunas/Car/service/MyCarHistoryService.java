@@ -1,8 +1,8 @@
-package lt.sarunas.Spring_demo.service;
+package lt.sarunas.Car.service;
 
-import lt.sarunas.Spring_demo.model.CarExpenses;
-import lt.sarunas.Spring_demo.repository.entities.CarHistory;
-import lt.sarunas.Spring_demo.repository.CarHistoryRepository;
+import lt.sarunas.Car.model.CarExpenses;
+import lt.sarunas.Car.repository.entities.CarHistory;
+import lt.sarunas.Car.repository.CarHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.List;
 public class MyCarHistoryService {
 
     @Autowired
-    private CarHistoryRepository myCarHistoryRepository;
+    CarHistoryRepository myCarHistoryRepository;
 
     public List<CarHistory> getAllMyCarHistory() {
 
@@ -20,12 +20,6 @@ public class MyCarHistoryService {
     }
 
     public CarHistory getMy_car_historyById(int id) {
-
-        /*try {
-            return myCarHistoryRepository.findById(id).get();
-        }catch (NoSuchElementException e){
-            e.printStackTrace();
-        } */ // 2 variantas su catch metodu
 
         if (myCarHistoryRepository.findById(id).isPresent()) {
             return myCarHistoryRepository.findById(id).get();
@@ -59,5 +53,9 @@ public class MyCarHistoryService {
         expenses.setTotalPartsPrice(totalPartsPrice);
         expenses.setTotalRepairPrice(totalRepairPrice);
         return expenses;
+    }
+
+    public void updateHistoryEntry(CarHistory carHistory) {
+        myCarHistoryRepository.save(carHistory);
     }
 }

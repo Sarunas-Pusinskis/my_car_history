@@ -3,27 +3,33 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link th:href="@{/styles/mycarhistory/basic.css}" rel="stylesheet"/>
-    <link th:href="@{/styles/mycarhistory/index.css}" rel="stylesheet"/>
-    <link rel="stylesheet" href="/static/styles/mycarhistory/basic.css"/>
-    <link rel="stylesheet" href="/static/styles/mycarhistory/index.css"/>
+    <title>ALL EXPENSES</title>
+    <link th:href="@{/styles/mycarhistories/table.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/mycarhistories/table.css"/>
+
 </head>
 
 <body>
-<div class="carHistory" th:object="${carExpenses}">
-    <div class="label"><p>Total parts cost: </p></div>
-    <div class="carHistory-data">
-        <p th:text="*{totalPartsPrice}"/>
-    </div>
-    <div class="label"><p>Total service cost: </p></div>
-    <div class="carHistory-data">
-        <p th:text="*{totalRepairPrice}"/>
-    </div>
-    <div class="label"><p>Total cost: </p></div>
-    <div class="carHistory-data">
-        <p th:text="*{totalPartsPrice + totalRepairPrice}"/>
-    </div>
+<h2>ALL EXPENSES</h2>
+
+<div class="table-wrapper">
+    <table class="fl-table">
+        <thead>
+        <tr>
+            <th class="th">Total parts cost:</th>
+            <th class="th">Total service cost:</th>
+            <th class="th">Total cost:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="td" th:text="${carExpenses.totalPartsPrice}"></td>
+            <td class="td" th:text="${carExpenses.totalRepairPrice}"></td>
+            <td class="td" th:text="${carExpenses.totalPartsPrice + carExpenses.totalRepairPrice}"></td>
+        </tr>
+
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
