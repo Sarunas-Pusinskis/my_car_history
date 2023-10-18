@@ -1,10 +1,9 @@
-package lt.sarunas.Spring_demo.controller;
+package lt.sarunas.Car.controller;
 
-import lt.sarunas.Spring_demo.model.CarExpenses;
-import lt.sarunas.Spring_demo.repository.entities.CarHistory;
-import lt.sarunas.Spring_demo.service.MyCarHistoryService;
+import lt.sarunas.Car.model.CarExpenses;
+import lt.sarunas.Car.repository.entities.CarHistory;
+import lt.sarunas.Car.service.MyCarHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -123,7 +122,6 @@ public class MyCarHistoryController {
     public String updateExpenses(@PathVariable int id, @ModelAttribute("myCarHistory") CarHistory updatedCarHistory, Model model) {
         CarHistory existingCarHistory = myCarHistoryService.getMy_car_historyById(id);
         if (existingCarHistory != null) {
-            // Update the fields of the existing record
             existingCarHistory.setPart_Name(updatedCarHistory.getPart_Name());
             existingCarHistory.setQuantity(updatedCarHistory.getQuantity());
             existingCarHistory.setPart_Price(updatedCarHistory.getPart_Price());

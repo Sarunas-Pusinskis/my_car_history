@@ -1,4 +1,4 @@
-package lt.sarunas.Spring_demo.repository.entities;
+package lt.sarunas.Car.repository.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -29,4 +29,5 @@ public class CarHistory {
     public CarHistory(String part_Name) {
         this.part_Name = part_Name;
     }
+
 }

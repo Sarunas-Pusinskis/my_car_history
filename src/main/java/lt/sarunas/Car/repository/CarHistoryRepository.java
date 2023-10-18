@@ -1,6 +1,6 @@
-package lt.sarunas.Spring_demo.repository;
+package lt.sarunas.Car.repository;
 
-import lt.sarunas.Spring_demo.repository.entities.CarHistory;
+import lt.sarunas.Car.repository.entities.CarHistory;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
